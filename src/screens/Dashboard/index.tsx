@@ -1,4 +1,5 @@
 import HighlightCard from '../../components/HighlightCard';
+import TransactionCard from '../../components/TransactionCard';
 
 import {
   Container,
@@ -10,7 +11,9 @@ import {
   UserGreeting,
   UserName,
   Icon,
-  HighlightCards
+  HighlightCards,
+  Transactions,
+  Title,
 } from './styles';
 
 export default function Dashboard() {
@@ -53,6 +56,12 @@ export default function Dashboard() {
           lastTransaction='01 à 16 de abril'
         />
       </HighlightCards>
+
+      <Transactions>
+        <Title>Listagem</Title>
+
+        <TransactionCard />
+      </Transactions>
     </Container>
   );
 }

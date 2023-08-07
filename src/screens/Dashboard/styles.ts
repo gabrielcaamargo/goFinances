@@ -2,7 +2,8 @@ import styled from 'styled-components/native';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 
 import { Feather } from '@expo/vector-icons';
-import { StatusBar } from 'react-native';
+import { FlatList, FlatListProps, StatusBar } from 'react-native';
+import { ITransactionList } from '../../@types/ITransactionList';
 
 const StatusBarHeight = StatusBar.currentHeight;
 
@@ -84,3 +85,12 @@ export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
   margin-bottom: 16px;
 `;
+
+export const TransactionList = styled(
+  FlatList as new (props: FlatListProps<ITransactionList>) => FlatList<ITransactionList>
+).attrs({
+  showsVerticalScrollIndicator: false,
+  contentContainerStyle: {
+    paddingBottom: 32
+  }
+})``;
